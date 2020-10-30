@@ -1,5 +1,5 @@
 # Algeo02-19149
-> Making search simple engine
+> Simple search engine,cosine simmilarity
 
 ## Table of contents
 * [General info](#general-info)
@@ -40,10 +40,10 @@ To-do list:
 * Wow improvement to be done 2
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+_in progress_
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+based on IF2123 Aljabar Linear Geometri, Bandung Institute Technology
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by Syihabuddin Yahya Muhammad - 13519149, Nabil Nabighah - 13519168, Allief Nuriman - 13519221
