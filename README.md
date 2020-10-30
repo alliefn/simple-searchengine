@@ -1,5 +1,5 @@
 # Algeo02-19149
-> Simple search engine
+> Making search simple engine
 
 ## Table of contents
 * [General info](#general-info)
