@@ -22,6 +22,7 @@ def about():
 def howuse():
 	return render_template('howtouse.html')
 
+'''
 @app.route('/', methods=['POST'])
 def keyboard_input():
 	userinput = request.files['q']
@@ -43,7 +44,7 @@ def keyboard_input2():
       counts[i] = counts.get(i, 0) + 1
     data.append(counts)
     return "<h1>data: {}</h1>".format(data)
-
+'''
 
 @app.route('/', methods=['POST'])
 def upload_file():
