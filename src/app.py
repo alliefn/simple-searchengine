@@ -22,13 +22,27 @@ def about():
 def howuse():
 	return render_template('howtouse.html')
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def keyboard_input():
-    return prosesinput('GET')
+	userinput = request.files['q']
+	content = userinput.read()
+	content_list = content.split()
+    counts = dict()
+    for i in content_list:
+      counts[i] = counts.get(i, 0) + 1
+    data.append(counts)
+    return "<h1>data: {}</h1>".format(data)
 
-@app.route('/index.html', methods=['GET']) # Backup kalo user nginput di /index.html
+@app.route('/index.html', methods=['POST']) # Backup kalo user nginput di /index.html
 def keyboard_input2():
-    return prosesinput('GET')
+	userinput = request.files['q']
+	content = userinput.read()
+	content_list = content.split()
+    counts = dict()
+    for i in content_list:
+      counts[i] = counts.get(i, 0) + 1
+    data.append(counts)
+    return "<h1>data: {}</h1>".format(data)
 
 
 @app.route('/', methods=['POST'])
@@ -52,4 +66,3 @@ def upload_file():
 """
 if __name__ == "__main__":
 	app.run(debug=True)
-
