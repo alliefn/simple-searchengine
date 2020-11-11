@@ -33,6 +33,31 @@ def inputsearch():							#masalah : input sebelumnya blm kedelete
 	querylist.append(counts)
 	return "<h1>querylist: {}</h1>".format(querylist) 
 
+
+'''
+@app.route('/', methods=['POST'])
+def keyboard_input():
+	userinput = request.files['q']
+	content = userinput.read()
+	content_list = content.split()
+    counts = dict()
+    for i in content_list:
+      counts[i] = counts.get(i, 0) + 1
+    data.append(counts)
+    return "<h1>data: {}</h1>".format(data)
+
+@app.route('/index.html', methods=['POST']) # Backup kalo user nginput di /index.html
+def keyboard_input2():
+	userinput = request.files['q']
+	content = userinput.read()
+	content_list = content.split()
+    counts = dict()
+    for i in content_list:
+      counts[i] = counts.get(i, 0) + 1
+    data.append(counts)
+    return "<h1>data: {}</h1>".format(data)
+'''
+
 @app.route('/dbdic.html', methods=['POST'])
 def upload_file():
     uploaded_file = request.files['Fileinput']
