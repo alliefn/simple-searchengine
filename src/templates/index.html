@@ -18,20 +18,23 @@
 		<b><big><h1><big><big>SEARCH ENGINE :V</big></big></h1></big></b>
 	</div>
 	<div align="center" class="container">
-		<form method="POST" action="/uploadFile" enctype="multipart/form-data">
+		<form method="POST" action="dbdic.html" enctype="multipart/form-data">
 		<div class ="form-group">
 			<label for="inputFile">File input</label>
 			<input type="file" name="Fileinput">
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="submit" class="btn btn-default" value = submit>Submit</button>
 		</div>
 		</form>
 	</div>
 	<br>
 	<div align="center" class="search-box">
-		<input type="text" name="" placeholder="Search...">
-		<br><br>
-		<a href="#"><button type="button">Cari!</button></a>
-	</div align="center">
+		<form method="POST" action= "query.html" enctype="multipart/form-data">
+			<input type="text" name="q" placeholder="Search...">
+			<br><br>
+			<a><button type="submit" class="btn btn-default" value ="submit">Cari!</button></a>
+		</form>
+</form>
+	</div>
 	<br>
 	<div align="center">
 			<a href = aboutus.html align="center">Tentang Kami</a>

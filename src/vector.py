@@ -1,5 +1,3 @@
-import math
-
 def sim(q,d): #ngitung similarity dari query sama document  
     dot = dotprod(q,d)
     magq = magvec(q,q)
