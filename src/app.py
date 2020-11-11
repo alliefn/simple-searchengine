@@ -27,7 +27,7 @@ def keyboard_input():
     return prosesinput('GET')
 
 @app.route('/index.html', methods=['GET']) # Backup kalo user nginput di /index.html
-def keyboard_input():
+def keyboard_input2():
     return prosesinput('GET')
 
 
