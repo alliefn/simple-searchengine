@@ -1,7 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 import readinput
 import vector
-
+import nltk
+from nltk.stem import PorterStemmer 
+from nltk.tokenize import word_tokenize
+nltk.download('punkt')
+   
+ps = PorterStemmer()
 data = []
 querylist = []
 simar = []
@@ -35,18 +40,20 @@ def inputsearch():
   for x in data:
     simar.append(vector.sim(querylist,x))
   vector.sort(simar,data)
-  return render_template('result.html').format(savedata[1])
+  return "<h1>contoh {} </h1>".format(data)
 
 @app.route('/', methods=['POST'])
 def upload_file():
   uploaded_file = request.files.getlist('Fileinput')
   for file_to_upload in uploaded_file:
-    content = file_to_upload.read()
-    savedata.append(content.decode("utf-8"))
-    content_list = content.split()
+    content = file_to_upload.read().decode("utf-8")
+    savedata.append(content)
+    word = content.split()
+    content_list = []
+    for w in word:
+            content_list.append(ps.stem(w))
     counts = dict()
     for i in content_list:
-      i = i.decode("utf-8")
       counts[i] = counts.get(i, 0) + 1
     data.append(counts)
   return render_template('index.html')
