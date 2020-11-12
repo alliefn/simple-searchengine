@@ -2,9 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for
 import readinput
 import vector
 
-
 data = []
 querylist = []
+simar = []
+savedata = []
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,30 +24,32 @@ def about():
 def howuse():
 	return render_template('howtouse.html')
 
-@app.route('/query.html',methods =['POST'])
+@app.route('/result.html',methods =['POST'])
 def inputsearch():
   query = request.form['q']
   query_input = query.split()
   counts = dict()
-  if len(querylist) != 0: #setiap search, query selalu kosong, jadi pas search lagi query yg sebelumnya ilang
-    querylist.clear()
   for i in query_input:
     counts[i] = counts.get(i, 0) + 1
-  querylist.append(counts)
-  return "<h1>querylist: {}</h1>".format(querylist) 
+  querylist = counts
+  for x in data:
+    simar.append(vector.sim(querylist,x))
+  vector.sort(simar,data)
+  return render_template('result.html').format(savedata[1])
 
-@app.route('/dbdic.html', methods=['POST'])
+@app.route('/', methods=['POST'])
 def upload_file():
   uploaded_file = request.files.getlist('Fileinput')
   for file_to_upload in uploaded_file:
     content = file_to_upload.read()
+    savedata.append(content.decode("utf-8"))
     content_list = content.split()
     counts = dict()
     for i in content_list:
+      i = i.decode("utf-8")
       counts[i] = counts.get(i, 0) + 1
     data.append(counts)
-  
-  return "<h1>data: {}</h1>".format(data)
+  return render_template('index.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
