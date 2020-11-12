@@ -23,15 +23,17 @@ def about():
 def howuse():
 	return render_template('howtouse.html')
 
-@app.route('/query.html',methods =['POST']) #search input tapi belum rapih, 1 masalah 
-def inputsearch():							#masalah : input sebelumnya blm kedelete
-	query = request.form['q']				#input awal : aku kamu
-	query_input = query.split()				#querynya : [{aku : 1, kamu :1}]
-	counts = dict()							#terus kembali ke menu awal, input lagi
-	for i in query_input:					#input selanjutnya : dia, suka
-		counts[i] = counts.get(i, 0) + 1	# querynya : [{aku : 1, kamu : 1}, {dia : 1, suka :1}] aku,kamunya masih ada
-	querylist.append(counts)
-	return "<h1>querylist: {}</h1>".format(querylist) 
+@app.route('/query.html',methods =['POST'])
+def inputsearch():
+  query = request.form['q']
+  query_input = query.split()
+  counts = dict()
+  if len(querylist) != 0: #setiap search, query selalu kosong, jadi pas search lagi query yg sebelumnya ilang
+    querylist.clear()
+  for i in query_input:
+    counts[i] = counts.get(i, 0) + 1
+  querylist.append(counts)
+  return "<h1>querylist: {}</h1>".format(querylist) 
 
 @app.route('/dbdic.html', methods=['POST'])
 def upload_file():
