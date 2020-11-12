@@ -33,6 +33,24 @@ def inputsearch():							#masalah : input sebelumnya blm kedelete
 	querylist.append(counts)
 	return "<h1>querylist: {}</h1>".format(querylist) 
 
+@app.route('/dbdic.html', methods=['POST'])
+def upload_file():
+  uploaded_file = request.files.getlist('Fileinput')
+  for file_to_upload in uploaded_file:
+    content = file_to_upload.read()
+    content_list = content.split()
+    counts = dict()
+    for i in content_list:
+      counts[i] = counts.get(i, 0) + 1
+    data.append(counts)
+  
+  return "<h1>data: {}</h1>".format(data)
+
+if __name__ == "__main__":
+	app.run(debug=True)
+
+
+
 
 '''
 @app.route('/', methods=['POST'])
@@ -58,18 +76,6 @@ def keyboard_input2():
     return "<h1>data: {}</h1>".format(data)
 '''
 
-@app.route('/dbdic.html', methods=['POST'])
-def upload_file():
-    uploaded_file = request.files['Fileinput']
-    content = uploaded_file.read()
-    content_list = content.split()
-    
-    counts = dict()
-    for i in content_list:
-      counts[i] = counts.get(i, 0) + 1
-    data.append(counts)
-    return "<h1>data: {}</h1>".format(data)
-
 """
 @app.route('/', methods=['POST'])
 def upload_file():
@@ -78,5 +84,4 @@ def upload_file():
         uploaded_file.save(uploaded_file.filename)
     return redirect(url_for('index'))
 """
-if __name__ == "__main__":
-	app.run(debug=True)
+
