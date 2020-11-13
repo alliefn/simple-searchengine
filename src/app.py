@@ -79,7 +79,7 @@ def result(judul):
         for s in doc:
                 if s.namafile == judul:
                         break
-        return "<h1>{}</h1>".format(s.savedata)
+        return "<p>{}</p>".format(s.savedata)
 
 
 if __name__ == "__main__":
