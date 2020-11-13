@@ -49,7 +49,7 @@ def inputsearch():
   for x in doc:
     x.simar = vector.sim(querylist,x.data)
   vector.sortD(doc)
-  return render_template('result.html', doc=doc)
+  return render_template('result.html', doc=doc, query=querylist, keys=querylist.keys())
 
 @app.route('/', methods=['POST'])
 def upload_file():
