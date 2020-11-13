@@ -14,6 +14,9 @@ class dokumen:
         savedata: str
         data: dict()
         simar: float = 0
+        jumlah: int = 0
+        jumlahkata: int = 0
+        firstword: str = ""
 
 querylist = []
 doc = []
@@ -60,12 +63,14 @@ def upload_file():
     namafile = file_to_upload.filename
     word = content.split()
     content_list = []
+    jumlah = 0
     for w in word:
             content_list.append(ps.stem(w))
+            jumlah += 1
     counts = dict()
     for i in content_list:
       counts[i] = counts.get(i, 0) + 1
-    doc.append(dokumen(namafile, content, counts))
+    doc.append(dokumen(namafile, content, counts, 0, jumlah, len(content), content[0:30]))
   return render_template('index.html')
 
 
