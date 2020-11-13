@@ -65,6 +65,15 @@ def upload_file():
     doc.append(dokumen(namafile, content, counts))
   return render_template('index.html')
 
+
+@app.route('/result/<judul>')
+def result(judul):
+        for s in doc:
+                if s.namafile == judul:
+                        break
+        return "<h1>{}</h1>".format(s.savedata)
+
+
 if __name__ == "__main__":
 	app.run(debug=True)
 
