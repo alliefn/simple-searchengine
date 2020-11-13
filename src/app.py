@@ -10,14 +10,12 @@ nltk.download('punkt')
 ps = PorterStemmer()
 @dataclass
 class dokumen:
+        namafile: str
         savedata: str
         data: dict()
         simar: float = 0
 
-#data = []
 querylist = []
-#simar = []
-#savedata = []
 doc = []
 app = Flask(__name__)
 
@@ -45,32 +43,17 @@ def inputsearch():
   for i in query_input:
     counts[i] = counts.get(i, 0) + 1
   querylist = counts
-  #for x in data:
   for x in doc:
     x.simar = vector.sim(querylist,x.data)
-    #simar.append(vector.sim(querylist,x))
-  #vector.sort(simar,data)
   vector.sortD(doc)
-  return """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Pencarian</title>
-</head>
-<body>
-    {}
-</body>
-</html>
-""".format(doc)
+  return render_template('result.html', doc=doc)
 
 @app.route('/', methods=['POST'])
 def upload_file():
   uploaded_file = request.files.getlist('Fileinput')
   for file_to_upload in uploaded_file:
     content = file_to_upload.read().decode("utf-8")
-    #savedata.append(content)
+    namafile = file_to_upload.filename
     word = content.split()
     content_list = []
     for w in word:
@@ -78,46 +61,16 @@ def upload_file():
     counts = dict()
     for i in content_list:
       counts[i] = counts.get(i, 0) + 1
-    #data.append(counts)
-    doc.append(dokumen(content, counts))
+    doc.append(dokumen(namafile, content, counts))
   return render_template('index.html')
+
+@app.route('/', methods=['GET'])
+def reset_file():
+        doc = []
+        return render_template('index.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
 
 
-
-
-'''
-@app.route('/', methods=['POST'])
-def keyboard_input():
-	userinput = request.files['q']
-	content = userinput.read()
-	content_list = content.split()
-    counts = dict()
-    for i in content_list:
-      counts[i] = counts.get(i, 0) + 1
-    data.append(counts)
-    return "<h1>data: {}</h1>".format(data)
-
-@app.route('/index.html', methods=['POST']) # Backup kalo user nginput di /index.html
-def keyboard_input2():
-	userinput = request.files['q']
-	content = userinput.read()
-	content_list = content.split()
-    counts = dict()
-    for i in content_list:
-      counts[i] = counts.get(i, 0) + 1
-    data.append(counts)
-    return "<h1>data: {}</h1>".format(data)
-'''
-
-"""
-@app.route('/', methods=['POST'])
-def upload_file():
-    uploaded_file = request.files['file']
-    if uploaded_file.filename != '':
-        uploaded_file.save(uploaded_file.filename)
-    return redirect(url_for('index'))
-"""
 
