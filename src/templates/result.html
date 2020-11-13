@@ -10,9 +10,14 @@
     <ul>
         <a href = result/{{row.namafile}} align="center" target="_blank">{{row.namafile}}</a>
         <br>
-        dict: {{row.data}}
+        jumlah kata: {{row.jumlah}}
         <br>
-        similarity: {{row.simar}}
+        similarity: {{row.simar*100}}%
+        <br>
+        {{row.firstword}}
+        {% if row.jumlahkata>30 %}
+        ...
+        {% endif %}
     </ul>
 {% endfor %}
 <table style="width:50%" align="center">
