@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- CSS CODE-->    
+<style> 
+    td {
+        text-align:center;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    
+    body{
+        background-color: lightblue;
+    }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Result</title>
@@ -9,6 +25,7 @@
     {% for row in doc %}
     <ul>
         <a href = result/{{row.namafile}} align="center" target="_blank">{{row.namafile}}</a>
+        <br>
         <br>
         jumlah kata: {{row.jumlah}}
         <br>
@@ -36,10 +53,5 @@
         </tr>
 {% endfor %}
 </table>
-<style>
-    td {
-    align="center";
-    }
-    </style>
 </body>
 </html>
