@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from dataclasses import dataclass
 import readinput
 import vector
 import nltk
@@ -7,10 +8,17 @@ from nltk.tokenize import word_tokenize
 nltk.download('punkt')
    
 ps = PorterStemmer()
-data = []
+@dataclass
+class dokumen:
+        savedata: str
+        data: dict()
+        simar: float = 0
+
+#data = []
 querylist = []
-simar = []
-savedata = []
+#simar = []
+#savedata = []
+doc = []
 app = Flask(__name__)
 
 @app.route('/')
@@ -37,17 +45,19 @@ def inputsearch():
   for i in query_input:
     counts[i] = counts.get(i, 0) + 1
   querylist = counts
-  for x in data:
-    simar.append(vector.sim(querylist,x))
-  vector.sort(simar,data)
-  return "<h1>contoh {} </h1>".format(data)
+  #for x in data:
+  for x in doc:
+    x.simar = vector.sim(querylist,x.data)
+    #simar.append(vector.sim(querylist,x))
+  #vector.sort(simar,data)
+  return "<h1>contoh {} </h1>".format(doc)
 
 @app.route('/', methods=['POST'])
 def upload_file():
   uploaded_file = request.files.getlist('Fileinput')
   for file_to_upload in uploaded_file:
     content = file_to_upload.read().decode("utf-8")
-    savedata.append(content)
+    #savedata.append(content)
     word = content.split()
     content_list = []
     for w in word:
@@ -55,7 +65,8 @@ def upload_file():
     counts = dict()
     for i in content_list:
       counts[i] = counts.get(i, 0) + 1
-    data.append(counts)
+    #data.append(counts)
+    doc.append(dokumen(content, counts))
   return render_template('index.html')
 
 if __name__ == "__main__":
