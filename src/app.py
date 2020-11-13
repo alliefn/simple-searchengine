@@ -51,6 +51,7 @@ def inputsearch():
 @app.route('/', methods=['POST'])
 def upload_file():
   uploaded_file = request.files.getlist('Fileinput')
+  doc.clear()
   for file_to_upload in uploaded_file:
     content = file_to_upload.read().decode("utf-8")
     namafile = file_to_upload.filename
@@ -63,11 +64,6 @@ def upload_file():
       counts[i] = counts.get(i, 0) + 1
     doc.append(dokumen(namafile, content, counts))
   return render_template('index.html')
-
-@app.route('/', methods=['GET'])
-def reset_file():
-        doc = []
-        return render_template('index.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
