@@ -38,7 +38,10 @@ def howuse():
 @app.route('/result.html',methods =['POST'])
 def inputsearch():
   query = request.form['q']
-  query_input = query.split()
+  word = query.split()
+  query_input = []
+  for w in word:
+          query_input.append(ps.stem(w))
   counts = dict()
   for i in query_input:
     counts[i] = counts.get(i, 0) + 1
