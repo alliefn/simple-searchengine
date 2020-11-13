@@ -50,7 +50,20 @@ def inputsearch():
     x.simar = vector.sim(querylist,x.data)
     #simar.append(vector.sim(querylist,x))
   #vector.sort(simar,data)
-  return "<h1>contoh {} </h1>".format(doc)
+  vector.sortD(doc)
+  return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pencarian</title>
+</head>
+<body>
+    {}
+</body>
+</html>
+""".format(doc)
 
 @app.route('/', methods=['POST'])
 def upload_file():

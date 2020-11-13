@@ -27,4 +27,11 @@ def sort(arr,dic):
         for j in range(0, n-i-1): 
             if arr[j] > arr[j+1] : 
                 arr[j], arr[j+1] = arr[j+1], arr[j] 
-                dic[j], dic[j+1] = dic[j+1], dic[j] 
+                dic[j], dic[j+1] = dic[j+1], dic[j]
+
+def sortD(arr): 
+    n = len(arr) 
+    for i in range(n-1): 
+        for j in range(0, n-i-1): 
+            if arr[j].simar < arr[j+1].simar : 
+                arr[j], arr[j+1] = arr[j+1], arr[j] 
