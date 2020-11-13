@@ -10,9 +10,31 @@
     <ul>
         <a href = result/{{row.namafile}} align="center" target="_blank">{{row.namafile}}</a>
         <br>
+        dict: {{row.data}}
         <br>
         similarity: {{row.simar}}
     </ul>
 {% endfor %}
+<table style="width:50%" align="center">
+<th>term</th>
+<th>query</th>
+{% for row in doc %}
+<th>{{row.namafile}}</th>
+{% endfor %}
+{% for term in keys %}
+        <tr>
+        <td>{{term}}</td> 
+        <td>{{query[term]}}</td>
+        {% for row in doc %}
+        <td>{{row.data.get(term, 0)}}</td>>
+        {% endfor %}
+        </tr>
+{% endfor %}
+</table>
+<style>
+    td {
+    align="center";
+    }
+    </style>
 </body>
 </html>
