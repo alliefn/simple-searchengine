@@ -6,6 +6,14 @@
     <title>Search Result</title>
 </head>
 <body>
-    
+    {% for row in doc %}
+    <ul>
+        {{row.namafile}}
+        <br>
+        {{row.savedata}}
+        <br>
+        {{row.simar}}
+    </ul>
+{% endfor %}
 </body>
 </html>
