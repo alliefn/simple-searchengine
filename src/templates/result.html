@@ -8,11 +8,10 @@
 <body>
     {% for row in doc %}
     <ul>
-        {{row.namafile}}
+        <a href = result/{{row.namafile}} align="center" target="_blank">{{row.namafile}}</a>
         <br>
-        {{row.savedata}}
         <br>
-        {{row.simar}}
+        similarity: {{row.simar}}
     </ul>
 {% endfor %}
 </body>
