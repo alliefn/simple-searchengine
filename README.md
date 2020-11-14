@@ -12,15 +12,13 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Flask, Python, dan HTML
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
@@ -40,7 +38,7 @@ To-do list:
 * Wow improvement to be done 2
 
 ## Status
-_in progress_
+_Finished_
 
 ## Inspiration
 based on IF2123 Aljabar Linear Geometri, Bandung Institute Technology
