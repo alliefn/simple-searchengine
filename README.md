@@ -9,7 +9,7 @@
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
-* [Contact](#contact)
+* [Credits](#credits)
 
 ## General info
 Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
