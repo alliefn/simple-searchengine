@@ -26,7 +26,8 @@ Keterangan: Instalasi dilakukan di Windows, Python sudah ada, dan Git sudah ada.
 2. Jalankan perintah "git clone https://github.com/LastAeon/Algeo02-19149".
 3. Jalankan perintah "cd Algeo2-19149/src".
 4. Jalankan perintah "py -m venv env".
-Sebuha folder bernama "venv" telah dibuat di folder src. Folder tersebut adalah _Virtual Environment_ untuk menjalankan website.
+
+Sebuah folder bernama "venv" telah dibuat di folder src. Folder tersebut adalah _Virtual Environment_ untuk menjalankan website.
 5. Jalankan perintah "env\Scripts\activate".
 6. Jalankan perintah "set FLASK_APP=app.py".
 7. Install flask dengan menjalankan perintah ini "pip install flask".
