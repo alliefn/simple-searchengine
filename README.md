@@ -1,5 +1,5 @@
 # Algeo02-19149
-> Simple search engine,cosine simmilarity
+> Simple search engine with Cosine Simmilarity principle.
 
 ## Table of contents
 * [General info](#general-info)
@@ -21,21 +21,22 @@ Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
 * Flask, Python, dan HTML
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+Keterangan: Instalasi dilakukan di Windows, Python sudah ada, dan Git sudah ada.
+1. Buka terminal di direktori favorit Anda.
+2. Jalankan perintah "git clone https://github.com/LastAeon/Algeo02-19149".
+3. Jalankan perintah "cd Algeo2-19149/src".
+4. Jalankan perintah "py -m venv env".
+Sebuha folder bernama "venv" telah dibuat di folder src. Folder tersebut adalah _Virtual Environment_ untuk menjalankan website.
+5. Jalankan perintah "env\Scripts\activate".
+6. Jalankan perintah "set FLASK_APP=app.py".
+7. Install flask dengan menjalankan perintah ini "pip install flask".
+8. Jalankan perintah "flask run".
+9. Website di _localhost_ sudah bisa diakses dan search engine bisa digunakan di 127.0.0.1:5000 atau localhost:5000.
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
-
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Search Engine
+* Penjelasan cara pakai
+* Laman tentang kami
 
 ## Status
 _Finished_
