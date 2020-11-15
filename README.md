@@ -43,5 +43,5 @@ _Finished_
 ## Inspiration
 based on IF2123 Aljabar Linear Geometri, Bandung Institute Technology
 
-## Contact
+## Credits
 Created by Syihabuddin Yahya Muhammad - 13519149, Nabil Nabighah - 13519168, Allief Nuriman - 13519221
