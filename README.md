@@ -15,7 +15,7 @@
 Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
 
 ## Screenshots
-![Example screenshot]("./Screenshot (214).png")
+![Example screenshot](./img/screenshot.jpg)
 
 ## Technologies
 * Flask, Python, dan HTML
