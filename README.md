@@ -30,6 +30,7 @@ Keterangan: Instalasi dilakukan di Windows, Python sudah ada, dan Git sudah ada.
 5. Jalankan perintah "env\Scripts\activate".
 6. Jalankan perintah "set FLASK_APP=app.py".
 7. Install flask dengan menjalankan perintah ini "pip install flask".
+8. Install nltk dengan menjalankan perintah "pip install nltk".
 8. Jalankan perintah "flask run".
 9. Website di _localhost_ sudah bisa diakses dan search engine bisa digunakan di 127.0.0.1:5000 atau localhost:5000.
 
