@@ -25,7 +25,7 @@ Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
 Keterangan: Instalasi dilakukan di Windows, Python sudah ada, dan Git sudah ada.
 1. Buka terminal di direktori favorit Anda.
 2. Jalankan perintah "git clone https://github.com/LastAeon/Algeo02-19149".
-3. Jalankan perintah "cd Algeo2-19149/src".
+3. Jalankan perintah "cd Algeo02-19149/src".
 4. Jalankan perintah "py -m venv env". Lalu, sebuah folder bernama "env" seharusnya telah dibuat di folder src. Folder tersebut adalah _Virtual Environment_ untuk menjalankan website.
 5. Jalankan perintah "env\Scripts\activate".
 6. Jalankan perintah "set FLASK_APP=app.py".
