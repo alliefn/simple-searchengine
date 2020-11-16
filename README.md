@@ -22,7 +22,7 @@ Dibuat untuk memenuhi tugas besar mata kuliah IF2123 Aljabar Linear dan Geometri
 * Flask, Python, dan HTML
 
 ## Setup
-Keterangan: Instalasi dilakukan di Windows, Python sudah ada, dan Git sudah ada.
+Keterangan: Instalasi dilakukan di Windows, Python di atas versi 3.7 sudah ada, dan Git sudah ada.
 1. Buka terminal di direktori favorit Anda.
 2. Jalankan perintah "git clone https://github.com/LastAeon/Algeo02-19149".
 3. Jalankan perintah "cd Algeo02-19149/src".
